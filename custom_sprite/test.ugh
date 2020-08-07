@@ -1,1 +1,2 @@
-thing 15000 m - 32 CYBERIMP "Cyber Imp"	CIMPA1
+thing 15000 m - 32 CYBERIMP "Cyber Imp"	"CIMPA1"
+thing 15001 m - 32 RKTTRRT "Rocket Turret"	"CIMPA1"
