@@ -1,0 +1,41 @@
+#include "zcommon.acs"
+
+int footstepTypesCount = 5;
+int footstepTypesDef[5][2]  = {{1,"FS_WATER"},{2,"FS_MUD"},{3,"FS_CONCR"},{4,"FS_WOOD"},{5,"FS_METAL"}};
+
+
+script 1 ENTER{
+	Thing_ChangeTID(0, 1000 + PlayerNumber());
+	ACS_Execute(2,0,0,0,0);
+}
+
+/*
+detect footsteps
+*/
+script 2 (void){
+	while(TRUE){
+		log(s:"detecting footsteps...");
+		str _footstep = isInFootstepSector();
+		log(s:_footstep);
+		if(_footstep){
+			log(s:"playing...");
+			PlaySound(1000,_footstep);
+		}
+		delay(15);
+	}
+}
+
+/*
+return whether player is in markd sector
+*/
+function str isInFootstepSector(void){
+	if(getActorVelX(0) || getActorVelY(0) || getActorVelZ(0)){
+		for(int a=0; a<footstepTypesCount; a++){
+			log(s:"testing for footstep type ", i:footstepTypesDef[a][0]);
+			if(ThingCountSector (T_NONE, 1000, footstepTypesDef[a][0])){
+				return(footstepTypesDef[a][1]);
+			}
+		}
+	}
+	return(FALSE);
+}

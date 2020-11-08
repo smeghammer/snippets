@@ -1,0 +1,13 @@
+episode MAP15
+{
+	name="fish fingers"
+	key="r"
+}
+
+map MAP15 "paktest"
+{
+	levelnum=15
+	next="MAP16"
+	sky1 = "DNESKY03"
+	music = "D_IN_CIT"
+}
