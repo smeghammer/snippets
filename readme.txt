@@ -1,0 +1,2 @@
+A hellscar that builds as you do certain things:
+ - would need to have a bunch of pre-prepared sectors that will raise/lower and have their textures altered from standard floor to lava. LOTS of script that defines these states.
