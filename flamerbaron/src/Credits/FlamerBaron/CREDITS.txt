@@ -1,0 +1,2 @@
+Code: Smeghammer, adapted from original flamer code from FlamerZombie (scalliano, GreyGhost, Ghastly)
+Sounds: from FlamerZombie (scalliano, GreyGhost, Ghastly)

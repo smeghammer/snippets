@@ -1,0 +1,15 @@
+Name: Flamer Baron
+Difficulty: Medium/hard
+Connection: Baron of Hell
+Summon: FlamerBaron
+Melee: yes
+Distance: Projectile
+Type: Demon
+Brightmaps: No
+Actor modification: Yes
+ACS: No
+
+
+A Baron of Hell modified to also spray you with green hellfire if you get too close. He'll still use the normal green fireball attack as well.
+
+Tested in (G)ZDoom.

@@ -1,0 +1,5 @@
+
+//FlamerBaron
+weapons/scorch                Sounds/FlamerBaron/dsscorch
+weapons/onfire                Sounds/FlamerBaron/dsonfire
+weapons/flamer                Sounds/FlamerBaron/dsflamer

@@ -1,0 +1,42 @@
+#
+#	Definition of thing groups
+#	Format is : thinggroup <letter> <colour> <description>
+#
+
+
+#Custom
+thinggroup c 66C "Custom Monsters"
+
+#
+#	Definition of things
+#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#
+#	<sprite> should be NULL for things without any sprite
+#
+# <flags> can contain these letters:
+#    i  :  invisible
+#    c  :  on ceiling
+#    l  :  lit up
+#    n  :  non-blocking
+#    v  :  can exist in void-space
+#    t  :  teleport dest (can overlap certain things)
+#
+#
+# DOOM/DOOM2:
+
+thing 12328 c - 20 ZBAMF1   "Beam Zombie"
+thing 15000 c - 20 CIMPF1   "Cyber Imp"
+thing 30124 c - 20 DPOSE1   "Double Chaingunner"
+thing 15056 c - 16 EXTRE1   "Exterminator"
+thing 31497 c - 20 FLMZE1   "Flamer Zombie"
+thing 3125 c - 60 RSPIB1E1   "Rail Arachnotron"
+thing 9656 c - 8 RATAC2C8   "Small Rat"
+thing 15001 c - 40 UACBJ8   "UAC Bot"
+thing 31004 c - 40 FLBRNE1   "Flamer Baron"
+
+# HERETIC
+# thing 15010 c - 40 PLANA0   "Garden tree 1"
+# thing 15011 c - 40 PLANB0   "Garden tree 2"
+# thing 15012 c - 40 PLANC0   "Garden bush 1"
+# thing 15013 c - 40 PLAND0   "Garden bush 2"
+# thing 15014 c - 40 PLANE0   "Garden bush 3"

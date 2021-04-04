@@ -1,0 +1,53 @@
+#library "myscripts.acs"
+#include "zcommon.acs"
+
+
+
+
+
+/*
+SCRIPT 1:
+---------
+*/
+script 1 (void){
+	log(s:"nail in...");	
+	print(i:1);
+	// tag, speed, height
+	Floor_LowerByValue(3, 8, 128);
+	print(i:2);
+	Ceiling_LowerByValue(3,8,128);
+	int counter = 0;
+	while(counter < 200){
+		counter = counter+1;
+		if(counter == 35){
+			print(s:"lowering floor 1");
+			Floor_LowerInstant(4,0,16);
+		}
+		if(counter == 70){
+			print(s:"lowering floor 2");
+			Floor_LowerInstant(5,0,16);
+		}
+		if(counter == 105){
+			print(s:"lowering floor 3");
+			Floor_LowerInstant(6,0,16);
+		}
+		Delay(1);
+	}
+	
+	
+	//Delay(100);
+	
+	
+	
+	// tag, speed, height
+	//Floor_LowerByValue(3, 8, 64);
+	//print(i:4);
+	/* open first monster trap */
+	//Ceiling_LowerByValue(3,8,64);
+	//print(i:5);
+	//Delay(170);
+	//Floor_LowerInstant(5,0,128);
+	//Delay(200);
+	//Floor_LowerInstant(6,0,128);
+	//print(i:6);
+}

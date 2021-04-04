@@ -1,0 +1,13 @@
+episode MAP15
+{
+	name="Flamer Baron Test"
+	key="r"
+}
+
+map MAP15 "Die burning with green goo stuck to you arse!"
+{
+	levelnum=15
+	next="MAP16"
+	sky1 = "SKY3"
+	music = "D_EVIL"
+}

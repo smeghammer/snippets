@@ -1,35 +1,32 @@
 #library "myscripts.acs"
 #include "zcommon.acs"
 
-
-
-
-
 /*
 SCRIPT 1:
 ---------
 */
-script 1 (void){
-	log(s:"nail in...");	
-	print(i:1);
+/* {3dsector,cut1,cut2,cut3,nailDist} */
+int skinPeeler[3][5] = {{3,4,5,6,128},{11,8,9,10,128},{18,13,14,15,128}};
+
+script 1 (int nailId){
+	log(s:"nail in...",i:skinPeeler[nailId][0],i:skinPeeler[nailId][1],i:skinPeeler[nailId][2],i:skinPeeler[nailId][3]);	
 	// tag, speed, height
-	Floor_LowerByValue(3, 8, 128);
-	print(i:2);
-	Ceiling_LowerByValue(3,8,128);
+	//the nail
+	Floor_LowerByValue(skinPeeler[nailId][0], 8, skinPeeler[nailId][4]);
+	Ceiling_LowerByValue(skinPeeler[nailId][0],8,skinPeeler[nailId][4]);
+	
+	//the skin
 	int counter = 0;
 	while(counter < 200){
 		counter = counter+1;
 		if(counter == 35){
-			print(s:"lowering floor 1");
-			Floor_LowerInstant(4,0,16);
+			Floor_LowerInstant(skinPeeler[nailId][1],0,16);
 		}
 		if(counter == 70){
-			print(s:"lowering floor 2");
-			Floor_LowerInstant(5,0,16);
+			Floor_LowerInstant(skinPeeler[nailId][2],0,16);
 		}
 		if(counter == 105){
-			print(s:"lowering floor 3");
-			Floor_LowerInstant(6,0,16);
+			Floor_LowerInstant(skinPeeler[nailId][3],0,16);
 		}
 		Delay(1);
 	}
