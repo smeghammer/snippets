@@ -11,6 +11,7 @@ actor FlamerBaron : BaronOfHell 31004
 	Obituary "%o was incinerated by a flamethrowing baron."
 	MeleeRange 256
 	SpawnId 31004
+	+DONTHARMCLASS
 	states
 	{
 		Spawn:
