@@ -5,7 +5,9 @@
 
 
 #Custom
-thinggroup c 66C "Custom Monsters"
+thinggroup c 66C "Custom Corpses"
+thinggroup d 66C "Flesh"
+thinggroup z 66C "Cybernetic"
 
 #
 #	Definition of things
@@ -24,19 +26,37 @@ thinggroup c 66C "Custom Monsters"
 #
 # DOOM/DOOM2:
 
-thing 12328 c - 20 ZBAMF1   "Beam Zombie"
-thing 15000 c - 20 CIMPF1   "Cyber Imp"
+thing 12328 z - 20 ZBAMF1   "Beam Zombie"
+thing 15000 z - 20 CIMPF1   "Cyber Imp"
+thing 3125 z - 60 RSPIB1E1   "Rail Arachnotron"
+
 thing 30124 c - 20 DPOSE1   "Double Chaingunner"
 thing 15056 c - 16 EXTRE1   "Exterminator"
 thing 31497 c - 20 FLMZE1   "Flamer Zombie"
-thing 3125 c - 60 RSPIB1E1   "Rail Arachnotron"
+
 thing 9656 c - 8 RATAC2C8   "Small Rat"
 thing 15001 c - 40 UACBJ8   "UAC Bot"
 thing 31004 c - 40 FLBRNE1   "Flamer Baron"
 
+thing 15200 c - 8 CPSIA0   "Impaled Corpse #1"
+thing 15201 c - 8 CPSIB0   "Impaled Corpse #2"
+thing 15202 c - 8 CPSIC0   "Impaled Corpse #3"
+thing 15203 c - 8 CPSID0   "Impaled Corpse #4"
+thing 15204 c - 8 CPSIE0   "Impaled Corpse #5"
+thing 15205 c - 8 UPSCA0   "Hanging Corpse #1"
+thing 15206 c - 8 UPSCB0   "Hanging Corpse #2"
+thing 15207 c - 8 UPSCC0   "Hanging Corpse #3"
+thing 15208 c - 8 UPSCD0   "Hanging Corpse #4"
+thing 15209 c - 8 UPSCE0   "Hanging Corpse #5"
+
+thing 16000 d - 16 MELFA0   "Flesh Pillar Pink"
+thing 16001 d - 16 MELFB0   "Flesh Pillar Tan"
+thing 16002 d - 16 MELFC0   "Flesh Dangling Pink"
+thing 16003 d - 16 MELFD0   "Flesh Dangling Tan"
+
 # HERETIC
-# thing 15010 c - 40 PLANA0   "Garden tree 1"
-# thing 15011 c - 40 PLANB0   "Garden tree 2"
-# thing 15012 c - 40 PLANC0   "Garden bush 1"
-# thing 15013 c - 40 PLAND0   "Garden bush 2"
-# thing 15014 c - 40 PLANE0   "Garden bush 3"
+thing 15010 c - 40 PLANA0   "Garden tree 1"
+thing 15011 c - 40 PLANB0   "Garden tree 2"
+thing 15012 c - 40 PLANC0   "Garden bush 1"
+thing 15013 c - 40 PLAND0   "Garden bush 2"
+thing 15014 c - 40 PLANE0   "Garden bush 3"
