@@ -1,0 +1,62 @@
+===========================================================================
+Archive Maintainer : (special instructions if any)
+Update to : (original filename if updating an existing file)
+Advanced engine needed : GZDoom
+Primary purpose : Single player
+===========================================================================
+Title : Flamer Baron (test map)
+Filename : flamerbaron.pk3
+Release date : 26/04/2021
+Author : smeghammer
+Email Address : smeghammer@live.com
+Other Files By Author : rectilinia.wad, hellbreach.wad, belials_ruin.wad, crushdepth.wad, tubeworm.wad, fuescher.wad, anitsotw.pk3, cardinalsin.pk3
+Misc. Author Info : Old git biker
+
+Description : A very short arena, primarily as a vehicle for demonstrating my Flamer Baron custom monster.
+
+Additional Credits to : 
+===========================================================================
+* What is included *
+
+New levels : 1
+Sounds : Yes
+Music : NO
+Graphics : No
+Dehacked/BEX Patch : No
+Demos : No
+Other : No
+Other files required : doom2.wad
+* Play Information *
+
+Game : Doom2.
+Map # : MAP15
+Single Player : Designed for
+Cooperative 2-4 Player : No
+Deathmatch 2-4 Player : No
+Other game styles : n/a
+Difficulty Settings : Not implemented
+* Construction *
+
+Base : New from scratch
+Build Time : 1 day
+Editor(s) used : Eureka, Slade3, Notepad++, ACC
+Known Bugs : 
+May Not Run With : Vanilla doom2
+Tested With : GZdoom 4.4.3
+
+* Copyright / Permissions *
+
+Authors (MAY) use the contents of this file as a base for
+modification or reuse. Permissions have been obtained from original 
+authors for any of their resources modified or included in this file.
+
+You MAY distribute this file, provided you include this text file, with
+no modifications. You may distribute this file in any electronic
+format (BBS, Diskette, CD, etc.) as long as you include this file 
+intact. I have received permission from the original authors of any
+modified or included content in this file to allow further distribution.
+* Where to get the file that this text file describes *
+
+The Usual: ftp://archives.3dgamers.com/pub/idgames/ and mirrors
+Web sites: https://github.com/smeghammer/snippets/blob/master/flamerbaron/compiled/flamerbaron.pk3
+FTP sites:
