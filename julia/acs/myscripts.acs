@@ -2,8 +2,11 @@
 #include "zcommon.acs"
 
 
+global int 1:x;
 
-
+script 100 ENTER{
+	x=1;
+}
 
 /*
 SCRIPT 1:
@@ -50,4 +53,12 @@ script 1 (void){
 	//Delay(200);
 	//Floor_LowerInstant(6,0,128);
 	//print(i:6);
+}
+
+script 2 (void){
+	x++;
+}
+
+script 3 (void){
+	log(i:x);
 }
