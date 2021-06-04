@@ -4,7 +4,7 @@ episode MAP02
 	key="r"
 }
 
-map MAP15 "increment"
+map MAP02 "increment"
 {
 	levelnum=02
 	next="MAP03"
