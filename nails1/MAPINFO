@@ -1,0 +1,13 @@
+episode MAP15
+{
+	name="A Nail in the Skin of the Earth"
+	key="r"
+}
+
+map MAP15 "Hammerfall"
+{
+	levelnum=15
+	next="MAP16"
+	sky1 = "DRTYSKY9"
+	music = "D_IN_CIT"
+}

@@ -1,0 +1,13 @@
+episode MAP02
+{
+	name="Code Tests"
+	key="r"
+}
+
+map MAP02 "increment"
+{
+	levelnum=02
+	next="MAP03"
+	sky1 = "DRTYSKY9"
+	music = "D_IN_CIT"
+}
