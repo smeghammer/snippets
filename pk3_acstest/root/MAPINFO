@@ -1,0 +1,21 @@
+episode MAP15
+{
+	name="ACS lib test"
+	key="r"
+}
+
+map MAP15 "Charybdis"
+{
+	levelnum=15
+	next="MAP16"
+	sky1 = "DNESKY03"
+	music = "D_IN_CIT"
+}
+
+map MAP16 "Charybdis"
+{
+	levelnum=16
+	next="MAP17"
+	sky1 = "DNESKY03"
+	music = "D_IN_CIT"
+}

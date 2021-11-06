@@ -26,14 +26,14 @@ script 1 (int direction){
 			x--;
 		}
 	}
-	log(i:x);
+	print(i:x);
 	if(x==3 &! raised){
-		log(s:"raising...");
+		print(s:"raising...");
 		raised = TRUE;
 		Ceiling_RaiseByValue(1,12,64);
 	}
 	if(x==0 && raised){
-		log(s:"lowering...");
+		print(s:"lowering...");
 		raised = FALSE;
 		Ceiling_LowerByValue(1,12,64);
 	}

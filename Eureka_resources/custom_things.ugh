@@ -1,0 +1,61 @@
+#
+#	Definition of thing groups
+#	Format is : thinggroup <letter> <colour> <description>
+#
+
+
+#Custom
+thinggroup q 66C "Custom monsters"
+thinggroup c 66C "Custom Decoration"
+thinggroup y 66C "Environmental"
+
+#
+#	Definition of things
+#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#
+#	<sprite> should be NULL for things without any sprite
+#
+# <flags> can contain these letters:
+#    i  :  invisible
+#    c  :  on ceiling
+#    l  :  lit up
+#    n  :  non-blocking
+#    v  :  can exist in void-space
+#    t  :  teleport dest (can overlap certain things)
+#
+#
+# DOOM/DOOM2:
+thing 3125 q - 60 RSPIB1E1   "Rail Arachnotron"
+thing 3333 q - 30 BRUSA1   "Bruiser Demon"
+thing 9656 q - 8 RATAC2C8   "Small Rat"
+thing 12040 q - 20 CBOSA1   "Cyber Baron"
+thing 10001 y - 40 FLMSML   "Fire (small)"
+thing 10002 y - 60 FLMMED   "Fire (medium)"
+thing 10003 y - 80 FLMLRG   "Fire (large)"
+thing 15056 q - 16 EXTRE1   "Exterminator"
+thing 12328 q - 20 ZBAMF1   "Beam Zombie"
+thing 15000 q - 20 CIMPF1   "Cyber Imp"
+thing 15001 q - 40 UACBJ8   "UAC Bot"
+
+thing 15010 y - 40 PLANA0   "Garden tree 1"
+thing 15011 y - 40 PLANB0   "Garden tree 2"
+thing 15012 y - 40 PLANC0   "Garden bush 1"
+thing 15013 y - 40 PLAND0   "Garden bush 2"
+thing 15014 y - 40 PLANE0   "Garden bush 3"
+thing 15900 y - 10 STEMA0   "Steam"
+
+thing 15500 q - 16 FSZKA1   "Female Scientist"
+thing 15501 q - 16 FSZWE1   "Female Scientist 2"
+thing 15503 q - 16 SCZAE1   "Zombie Scientist"
+thing 15502 q - 16 SCZHE1   "Zombie Scientist 3"
+thing 30124 q - 20 DPOSE1   "Double Chaingunner"
+thing 31004 q - 40 FLBRNE1  "Flamer Baron"
+thing 31497 q - 20 FLMZE1   "Flamer Zombie"
+thing 9403  q - 30 BOS6C1   "Squire"
+thing 15077  q - 10 SWBSB2B8   "Blood Skull"
+
+
+
+
+
+

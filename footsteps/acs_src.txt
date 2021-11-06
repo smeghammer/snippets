@@ -1,8 +1,7 @@
 #include "zcommon.acs"
 
-int footstepTypesCount = 5;
-int footstepTypesDef[5][2]  = {{1,"FS_WATER"},{2,"FS_MUD"},{3,"FS_CONCR"},{4,"FS_WOOD"},{5,"FS_METAL"}};
-
+int footstepTypesCount = 6;
+int footstepTypesDef[6][2]  = {{0,""},{1,"FS_WTR"},{2,"FS_MUD"},{3,"FS_CONCR"},{4,"FS_WOOD"},{5,"FS_METAL"}};
 
 script 1 ENTER{
 	Thing_ChangeTID(0, 1000 + PlayerNumber());
@@ -10,18 +9,24 @@ script 1 ENTER{
 }
 
 /*
-detect footsteps
+detect footsteps:
+also, see https://zdoom.org/wiki/GetActorVelY
 */
 script 2 (void){
+	int _delay = 15;
 	while(TRUE){
-		log(s:"detecting footsteps...");
-		str _footstep = isInFootstepSector();
-		log(s:_footstep);
+		int x = GetActorVelX(0);
+		int y = GetActorVelY(0);
+		int z = GetActorVelZ(0);
+		int speed = FixedSqrt(FixedMul(x, x) + FixedMul(y, y) + FixedMul(z, z));
+		str _footstep = "";
+		_footstep = isInFootstepSector();
 		if(_footstep){
-			log(s:"playing...");
-			PlaySound(1000,_footstep);
+			if(speed > 3){
+				PlaySound(1000,_footstep);
+			}
 		}
-		delay(15);
+		delay(_delay);
 	}
 }
 
@@ -31,7 +36,6 @@ return whether player is in markd sector
 function str isInFootstepSector(void){
 	if(getActorVelX(0) || getActorVelY(0) || getActorVelZ(0)){
 		for(int a=0; a<footstepTypesCount; a++){
-			log(s:"testing for footstep type ", i:footstepTypesDef[a][0]);
 			if(ThingCountSector (T_NONE, 1000, footstepTypesDef[a][0])){
 				return(footstepTypesDef[a][1]);
 			}
