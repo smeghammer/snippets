@@ -1,4 +1,4 @@
-#library "C:\Games\Doom\WADs\my_wads\snippets\pk3_acstest\root\acs\acslib.acs"
+#library "C:\Games\Doom\WADs\my_wads\snippets\pk3_acstest\resources\script_lib_src\acslib.acs"
 
 /* data grid for platform moving */
 /*tag,speed,distance,raise,lower*/
