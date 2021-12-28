@@ -1,0 +1,49 @@
+#
+#	Definition of thing groups
+#	Format is : thinggroup <letter> <colour> <description>
+#
+
+
+#Custom
+thinggroup q 66C "Custom monsters"
+
+#
+#	Definition of things
+#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#
+#	<sprite> should be NULL for things without any sprite
+#
+# <flags> can contain these letters:
+#    i  :  invisible
+#    c  :  on ceiling
+#    l  :  lit up
+#    n  :  non-blocking
+#    v  :  can exist in void-space
+#    t  :  teleport dest (can overlap certain things)
+#
+#
+# DOOM/DOOM2:
+
+thing 3120  q - 30 CARDA1   "Dark Cardinal"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
