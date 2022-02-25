@@ -1,0 +1,13 @@
+episode MAP15
+{
+	name="Code Tests"
+	key="r"
+}
+
+map MAP15 "To jump or not to jump..."
+{
+	levelnum=15
+	next="MAP16"
+	sky1 = "SKY1"
+	music = "D_IN_CIT"
+}
