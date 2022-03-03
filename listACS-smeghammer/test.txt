@@ -1,0 +1,243 @@
+         8: script 1, type = 4 (ENTER), flags = 0000, argc = 0
+           8: PUSHBYTE 0
+          10: PUSHNUMBER 1000
+          15: PLAYERNUMBER
+          17: ADD
+          18: LSPEC2 176
+          20: TERMINATE
+
+        21: script 2, type = 0 (NORMAL), flags = 0000, argc = 0
+          21: PUSHBYTE 1
+          23: IFNOTGOTO 176
+          28: PUSHBYTE 0
+          30: ASSIGNSCRIPTVAR 0
+          32: PUSHSCRIPTVAR 0
+          34: PUSHMAPVAR 5
+          36: LT
+          37: IFGOTO 54
+          42: GOTO 166
+          47: INCSCRIPTVAR 0
+          49: GOTO 32
+          54: PUSHSCRIPTVAR 0
+          56: PUSHMAPARRAY 1
+          58: PUSHBYTE 0
+          60: EQ
+          61: IFNOTGOTO 123
+          66: PUSHSCRIPTVAR 0
+          68: PUSHMAPARRAY 0
+          70: PUSH2BYTES 0, 0
+          73: GETSECTORFLOORZ
+          75: PUSHMAPVAR 8
+          77: PUSHMAPVAR 7
+          79: SUBTRACT
+          80: PUSHMAPVAR 6
+          82: SUBTRACT
+          83: PUSHBYTE 16
+          85: LSHIFT
+          86: GE
+          87: IFNOTGOTO 106
+          92: PUSHSCRIPTVAR 0
+          94: PUSH2BYTES 8, 32
+          97: RANDOM
+          98: ASSIGNMAPARRAY 4
+         100: PUSHSCRIPTVAR 0
+         102: PUSHBYTE 1
+         104: ASSIGNMAPARRAY 1
+         106: PUSHSCRIPTVAR 0
+         108: PUSHMAPARRAY 0
+         110: PUSHSCRIPTVAR 0
+         112: PUSHMAPARRAY 4
+         114: PUSHMAPVAR 6
+         116: LSPEC3 96
+         118: GOTO 161
+         123: PUSHSCRIPTVAR 0
+         125: PUSHMAPARRAY 0
+         127: PUSH2BYTES 0, 0
+         130: GETSECTORFLOORZ
+         132: PUSHMAPVAR 9
+         134: PUSHBYTE 16
+         136: LSHIFT
+         137: LE
+         138: IFNOTGOTO 149
+         143: PUSHSCRIPTVAR 0
+         145: PUSHBYTE 0
+         147: ASSIGNMAPARRAY 1
+         149: PUSHSCRIPTVAR 0
+         151: PUSHMAPARRAY 0
+         153: PUSHSCRIPTVAR 0
+         155: PUSHMAPARRAY 4
+         157: PUSHMAPVAR 6
+         159: LSPEC3 95
+         161: GOTO 47
+         166: PUSHSCRIPTVAR 0
+         168: PUSHMAPARRAY 0
+         170: TAGWAIT
+         171: GOTO 21
+         176: TERMINATE
+
+       177: script 3, type = 0 (NORMAL), flags = 0000, argc = 2
+         177: BEGINPRINT
+         178: PUSHBYTE 0
+         180: PRINTSTRING
+         181: PUSHSCRIPTVAR 0
+         183: PRINTNUMBER
+         184: ENDLOG
+         186: PUSHSCRIPTVAR 0
+         188: PUSHBYTE 12
+         190: PUSHSCRIPTVAR 1
+         192: PUSHBYTE 8
+         194: MULTIPLY
+         195: LSPEC3 96
+         197: TERMINATE
+
+       198: script 4, type = 0 (NORMAL), flags = 0000, argc = 0
+         198: BEGINPRINT
+         199: PUSHBYTE 1
+         201: PRINTSTRING
+         202: ENDLOG
+         204: PUSHBYTE 0
+         206: ASSIGNSCRIPTVAR 0
+         208: PUSHSCRIPTVAR 0
+         210: PUSHMAPVAR 10
+         212: LT
+         213: IFGOTO 230
+         218: GOTO 341
+         223: INCSCRIPTVAR 0
+         225: GOTO 208
+         230: PUSHBYTE 0
+         232: PUSHNUMBER 1000
+         237: PUSHSCRIPTVAR 0
+         239: PUSHMAPARRAY 11
+         241: THINGCOUNTSECTOR
+         243: IFNOTGOTO 336
+         248: PUSHSCRIPTVAR 0
+         250: PUSHMAPARRAY 13
+         252: PUSHBYTE 1
+         254: EQ
+         255: IFNOTGOTO 294
+         260: BEGINPRINT
+         261: PUSHBYTE 2
+         263: PRINTSTRING
+         264: PUSHSCRIPTVAR 0
+         266: PUSHMAPARRAY 11
+         268: PRINTNUMBER
+         269: ENDLOG
+         271: PUSHSCRIPTVAR 0
+         273: PUSHMAPARRAY 12
+         275: PUSHBYTE 128
+         277: PUSHNUMBER 256
+         282: LSPEC3 95
+         284: PUSHSCRIPTVAR 0
+         286: PUSHBYTE 2
+         288: ASSIGNMAPARRAY 13
+         290: PUSHMAPVAR 10
+         292: ASSIGNSCRIPTVAR 0
+         294: PUSHSCRIPTVAR 0
+         296: PUSHMAPARRAY 13
+         298: PUSHBYTE 0
+         300: EQ
+         301: IFNOTGOTO 336
+         306: BEGINPRINT
+         307: PUSHBYTE 3
+         309: PRINTSTRING
+         310: PUSHSCRIPTVAR 0
+         312: PUSHMAPARRAY 11
+         314: PRINTNUMBER
+         315: ENDLOG
+         317: PUSHSCRIPTVAR 0
+         319: PUSHMAPARRAY 12
+         321: PUSH2BYTES 128, 8
+         324: LSPEC3 95
+         326: PUSHSCRIPTVAR 0
+         328: PUSHBYTE 1
+         330: ASSIGNMAPARRAY 13
+         332: PUSHMAPVAR 10
+         334: ASSIGNSCRIPTVAR 0
+         336: GOTO 223
+         341: TERMINATE
+
+       342: script 5, type = 0 (NORMAL), flags = 0000, argc = 0
+         342: PUSH2BYTES 0, 90
+         345: THINGCOUNT
+         346: PUSHBYTE 0
+         348: GT
+         349: IFNOTGOTO 362
+         354: PUSHBYTE 35
+         356: DELAY
+         357: GOTO 342
+         362: BEGINPRINT
+         363: PUSHBYTE 4
+         365: PRINTSTRING
+         366: ENDLOG
+         368: PUSH5BYTES 82, 32, 1, 0, 0
+         374: LSPEC5 202
+         376: PUSH2BYTES 181, 176
+         379: LSPEC2 112
+         381: PUSH2BYTES 182, 176
+         384: LSPEC2 112
+         386: PUSH2BYTES 183, 160
+         389: LSPEC2 112
+         391: PUSH2BYTES 184, 144
+         394: LSPEC2 112
+         396: PUSH2BYTES 185, 128
+         399: LSPEC2 112
+         401: TERMINATE
+
+       402: script 6, type = 0 (NORMAL), flags = 0000, argc = 0
+         402: PUSHBYTE 0
+         404: ASSIGNSCRIPTVAR 0
+         406: PUSHSCRIPTVAR 0
+         408: PUSHMAPVAR 10
+         410: LT
+         411: IFGOTO 428
+         416: GOTO 452
+         421: INCSCRIPTVAR 0
+         423: GOTO 406
+         428: PUSHSCRIPTVAR 0
+         430: PUSHMAPARRAY 12
+         432: PUSHBYTE 128
+         434: PUSHNUMBER 256
+         439: LSPEC3 95
+         441: PUSHSCRIPTVAR 0
+         443: PUSHBYTE 2
+         445: ASSIGNMAPARRAY 13
+         447: GOTO 421
+         452: TERMINATE
+         453: NOP
+         454: NOP
+         455: NOP
+         456: TERMINATE
+         457: NOP
+         458: NOP
+         459: NOP
+         460: TERMINATE
+         461: NOP
+         462: NOP
+         463: NOP
+         464: TERMINATE
+         465: NOP
+         466: NOP
+         467: NOP
+         468: TERMINATE
+         469: NOP
+         470: NOP
+         471: NOP
+         472: TERMINATE
+         473: NOP
+         474: NOP
+         475: NOP
+         476: TERMINATE
+         477: NOP
+         478: NOP
+         479: NOP
+
+       480: Chunk 'SPTR'
+       536: Chunk 'STRL'
+       684: Chunk 'MINI'
+       720: Chunk 'ARAY'
+       792: Chunk 'AINI'
+       836: Chunk 'AINI'
+       880: Chunk 'AINI'
+       976: Chunk 'AINI'
+      1072: Chunk '\x01\x00\x00'
+      1160: End
