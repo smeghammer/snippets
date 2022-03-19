@@ -1,0 +1,174 @@
+ACTOR VP_BlueTorch replaces BlueTorch
+{
+	Radius 16
+	Height 64
+	+SOLID
+	states
+	{
+	Spawn:
+		TBLU AABBCCDD 1 BRIGHT A_SpawnItemEx("VP_BlueFlame", random(-2, 2), random(-2, 2), 58, 0, 0, 1)
+		loop
+	}
+}
+
+ACTOR VP_BlueFlame
+{
+	radius 2
+	height 2
+	mass 400
+	-SOLID
+	+NOGRAVITY
+//	renderstyle add
+	states
+	{
+	Spawn:
+		BLUF ABCDEFGGG 2 BRIGHT
+		stop
+	}
+}
+
+ACTOR VP_GreenTorch replaces GreenTorch
+{
+	Radius 16
+	Height 64
+	+SOLID
+	states
+	{
+	Spawn:
+		TGRN AABBCCDD 1 BRIGHT A_SpawnItemEx("VP_GreenFlame", random(-2, 2), random(-2, 2), 58, 0, 0, 1)
+		loop
+	}
+}
+
+ACTOR VP_GreenFlame
+{
+	radius 2
+	height 2
+	mass 400
+	-SOLID
+	+NOGRAVITY
+//	renderstyle add
+	states
+	{
+	Spawn:
+		GRNF ABCDEFGGG 2 BRIGHT
+		stop
+	}
+}
+
+ACTOR VP_RedTorch replaces RedTorch
+{
+	Radius 16
+	Height 64
+	+SOLID
+	states
+	{
+	Spawn:
+		TRED AABBCCDD 1 BRIGHT A_SpawnItemEx("VP_RedFlame", random(-2, 2), random(-2, 2), 58, 0, 0, 1)
+		loop
+	}
+}
+
+ACTOR VP_RedFlame
+{
+	radius 2
+	height 2
+	mass 400
+	-SOLID
+	+NOGRAVITY
+//	renderstyle add
+	states
+	{
+	Spawn:
+		REDF ABCDEFGGG 2 BRIGHT
+		stop
+	}
+}
+
+actor VoxelSwitchBase : SwitchableDecoration
+{
+	Radius 16
+	Height 32
+
+	Activation THINGSPEC_Switch
+
+	+SOLID
+	+NOGRAVITY
+	+USESPECIAL
+	+NOCLIP
+}
+
+actor VoxelSwitchTech01 : VoxelSwitchBase 15000
+{
+	states
+	{
+		Spawn:
+			Goto Inactive
+		Active:
+			SW01 B 70 A_PlaySound("switches/normbutn")
+			SW01 B 0 Thing_Deactivate(0)
+		Inactive:
+			SW01 A -1 A_PlaySound("switches/exitbutn")
+			Stop
+	}
+}
+
+actor VoxelSwitchTech02 : VoxelSwitchBase 15001
+{
+	states
+	{
+		Spawn:
+			Goto Inactive
+		Active:
+			SW02 B 70 A_PlaySound("switches/normbutn")
+			SW02 B 0 Thing_Deactivate(0)
+		Inactive:
+			SW02 A -1 A_PlaySound("switches/exitbutn")
+			Stop
+	}
+}
+
+actor VoxelSwitchTech03 : VoxelSwitchBase 15002
+{
+	states
+	{
+		Spawn:
+			Goto Inactive
+		Active:
+			SW03 B 70 A_PlaySound("switches/normbutn")
+			SW03 B 0 Thing_Deactivate(0)
+		Inactive:
+			SW03 A -1 A_PlaySound("switches/exitbutn")
+			Stop
+	}
+}
+
+actor VoxelSwitchTech04 : VoxelSwitchBase 15003
+{
+	states
+	{
+		Spawn:
+			Goto Inactive
+		Active:
+			SW04 B 70 A_PlaySound("switches/normbutn")
+			SW04 B 0 Thing_Deactivate(0)
+		Inactive:
+			SW04 A -1 A_PlaySound("switches/exitbutn")
+			Stop
+	}
+}
+
+actor VoxelSwitchHell01 : VoxelSwitchBase 15020
+{
+	states
+	{
+		Spawn:
+			Goto Inactive
+		Active:
+			SW05 B 70 A_PlaySound("switches/normbutn")
+			SW05 B 0 Thing_Deactivate(0)
+		Inactive:
+			SW05 A -1 A_PlaySound("switches/exitbutn")
+			Stop
+	}
+}
