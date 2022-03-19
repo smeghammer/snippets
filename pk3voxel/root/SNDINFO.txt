@@ -1,0 +1,9 @@
+//cyberimp
+$RANDOM CIMPSIT { Sounds/CyberImp/CIMPSIT1 Sounds/CyberImp/CIMPSIT2 }
+CIMPSIT1	Sounds/CyberImp/CIMPCIT1
+CIMPSIT2	Sounds/CyberImp/CIMPSIT2
+$RANDOM CIMPDTH { Sounds/CyberImp/CIMPDTH1 Sounds/CyberImp/CIMPDTH2 }
+CIMPDTH1	Sounds/CyberImp/CIMPDTH1
+CIMPDTH2	Sounds/CyberImp/CIMPDTH2
+CIMPPAIN	Sounds/CyberImp/CIMPPAIN
+CIMPACT		Sounds/CyberImp/CIMPACT
