@@ -145,6 +145,11 @@ plasa = "plasa"
 	droppedspin = 25
 }
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 8405c90c6ec7f03d3017b81e9013493d212f3b6f
 rocka = "rocka"
 {
 

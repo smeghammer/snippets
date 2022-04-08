@@ -41,6 +41,8 @@ texture h METAL9
 texture h METAL10
 texture h METAL11
 texture h METPOIS
+texture h EXITMET1
+texture h EXITMET2
 
 texture h WOODMET6
 texture h WOODMET7
