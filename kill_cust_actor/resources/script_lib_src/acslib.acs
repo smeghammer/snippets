@@ -1,0 +1,21 @@
+#library "C:\Games\Doom\WADs\my_wads\snippets\pk3_acstest\resources\script_lib_src\acslib.acs"
+
+/* data grid for platform moving */
+/*tag,speed,distance,raise,lower*/
+int datagrid[4][5] = {
+	{3,12,192,1,0},
+	{3,12,192,0,1},
+	{0,0,0,0,0},
+	{0,0,0,0,0}
+};	
+
+function void movePlat(int datagridIndex){
+	print(s:"in library function");
+	//tag,speed,distance
+	if(datagrid[datagridIndex][3] == 1){
+		floorandceiling_raisebyvalue(datagrid[datagridIndex][0], datagrid[datagridIndex][1], datagrid[datagridIndex][2]);
+	}
+	if(datagrid[datagridIndex][4] == 1){
+		floorandceiling_lowerbyvalue(datagrid[datagridIndex][0], datagrid[datagridIndex][1], datagrid[datagridIndex][2]);
+	}
+}

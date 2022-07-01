@@ -1,0 +1,12 @@
+#library "acslib.acs"
+#include "zcommon.acs"
+
+script 1000 ENTER{
+	print(s:"starting kill detect loop...");
+
+	While (ThingCount(T_NONE, 10) > 0) {
+		Delay(10);
+	}
+	Thing_Destroy(11, 1);
+}
+
