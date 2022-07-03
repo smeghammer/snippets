@@ -1,3 +1,4 @@
+
 ### Remote kill test
 
 A test WAD showing a method of killing things via a global array of TIDs
@@ -15,3 +16,6 @@ Thus, when you reach the corresponding area in MAP18, from 'the other side' as i
 It's all smoke and mirrors but seems to work OK.
 
 This demo WAD does not simulate the common areas, just the remote kill logic.
+
+fly-With-dr@gons
+abster747
