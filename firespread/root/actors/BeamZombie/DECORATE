@@ -1,0 +1,211 @@
+
+actor BeamGuy 12328
+{
+  obituary "%o was cauterised by a zombie's plasma beam."
+  health 50
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "grunt/sight"
+  attacksound "grunt/attack"
+  painsound "grunt/pain"
+  deathsound "grunt/death"
+  activesound "grunt/active"
+  dropitem "Cell" 192
+  MaxTargetRange 1024
+  MONSTER
+  +FLOORCLIP
+  states
+  {
+  Spawn:
+    ZBAM A 0 A_StopSoundEx (soundslot7)
+    ZBAM AB 10 A_Look
+    loop
+  See:
+    ZBAM A 0 A_StopSoundEx (soundslot7)
+    ZBAM AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ZBAM E 0 A_Jump (256, "Right", "Left")
+    stop
+    
+  Right:
+    ZBAM E 10 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -6, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 0 A_PlaySoundEx ("BeamGuy/Attack", soundslot7, 1)
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -5.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -5.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -5.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -4.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -4.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -4.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -4, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -3.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -3.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -3.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -3, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -2.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -2.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -2.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -2, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -1.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -1.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -1.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -1, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -0.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -0.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, -0.25, 1)
+    ZBAM F 0 A_FaceTarget
+    goto LockedOn
+    
+  Left:
+    ZBAM E 10 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 6, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 0 A_PlaySoundEx ("BeamGuy/Attack", soundslot7, 1)
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 5.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 5.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 5.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 4.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 4.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 4.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 4, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 3.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 3.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 3.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 3, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 2.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 2.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 2.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 2, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 1.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 1.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 1.25, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 1, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 0.75, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 0.5, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 0.25, 1)
+    ZBAM F 0 A_FaceTarget
+    goto LockedOn
+    
+  LockedOn:
+    ZBAM F 1 bright A_CustomMissile ("PlasmaBeamBall", 40, 8, 0, 1)
+    ZBAM F 0 A_FaceTarget
+    ZBAM F 0 A_Jump (8, "See")
+    ZBAM F 0 A_CPosRefire
+    goto LockedOn
+  Pain:
+    ZBAM G 3 A_StopSoundEx (soundslot7)
+    ZBAM G 3 A_Pain
+    goto See
+  Death:
+    ZBAM H 5 A_StopSoundEx (soundslot7)
+    ZBAM I 5 A_Scream
+    ZBAM J 5 A_NoBlocking
+    ZBAM K 5
+    ZBAM L -1
+    stop
+  XDeath:
+    POSS M 5 A_StopSoundEx (soundslot7)
+    POSS N 5 A_XScream
+    POSS O 5 A_NoBlocking
+    POSS PQRST 5
+    POSS U -1
+    stop
+  Raise:
+    ZBAM KJIH 5
+    goto See
+  }
+}
+
+
+ACTOR PlasmaBeamBall : FastProjectile
+{
+  Speed 200
+  Radius 13
+  Height 8
+  Damage (1)
+  Decal DoomImpScorch
+  MissileType PlasmaBeamTrail
+  Deathsound "Beamguy/Hit"
+  -CANNOTPUSH
+  -NODAMAGETHRUST
+  states
+  {
+  Death:
+    TNT1 A 4
+    stop
+  }
+}
+
+ACTOR PlasmaBeamTrail
+{
+  RenderStyle Add
+  Scale 0.25
+  +NOINTERACTION
+  States
+  {
+  Spawn:
+    APBX B 0 
+    APBX B 0 A_Jump (256, "B", "C", "D")
+    stop
+  B:
+    APBX B 2 bright
+    stop
+  C:
+    APBX C 2 bright
+    stop
+  D:
+    APBX D 2 bright
+    stop  
+  }
+}

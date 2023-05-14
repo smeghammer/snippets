@@ -1,0 +1,6 @@
+https://www.realm667.com/index.php/en/sfx-shoppe-mainmenu-139-58855/elemental-effects-mainmenu-142-40777/703-fire
+
+Decorate: Solarsnowfall, Tormentor667, Ghastly_dragon
+GLDefs: Ghastly_dragon
+Sounds: Id Software, Looking Glass Studios, Ion Storm Inc.
+Sprites: SolarSnowFall

@@ -1,0 +1,185 @@
+BrightMap Sprite ZBAMA1
+{
+Map "Brightmaps/BeamZombie/BMZBAMA1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMA2A8
+{
+Map "Brightmaps/BeamZombie/BMZBAMA2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMA3A7
+{
+Map "Brightmaps/BeamZombie/BMZBAMA3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMA4A6
+{
+Map "Brightmaps/BeamZombie/BMZBAMA4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMA5
+{
+Map "Brightmaps/BeamZombie/BMZBAMA5"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMB1
+{
+Map "Brightmaps/BeamZombie/BMZBAMB1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMB2B8
+{
+Map "Brightmaps/BeamZombie/BMZBAMB2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMB3B7
+{
+Map "Brightmaps/BeamZombie/BMZBAMB3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMB4B6
+{
+Map "Brightmaps/BeamZombie/BMZBAMB4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMB5
+{
+Map "Brightmaps/BeamZombie/BMZBAMB5"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMC1
+{
+Map "Brightmaps/BeamZombie/BMZBAMC1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMC2C8
+{
+Map "Brightmaps/BeamZombie/BMZBAMC2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMC3C7
+{
+Map "Brightmaps/BeamZombie/BMZBAMC3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMC4C6
+{
+Map "Brightmaps/BeamZombie/BMZBAMC4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMD1
+{
+Map "Brightmaps/BeamZombie/BMZBAMD1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMD2D8
+{
+Map "Brightmaps/BeamZombie/BMZBAMD2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMD3D7
+{
+Map "Brightmaps/BeamZombie/BMZBAMD3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMD4D6
+{
+Map "Brightmaps/BeamZombie/BMZBAMD4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAME1
+{
+Map "Brightmaps/BeamZombie/BMZBAME1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAME2E8
+{
+Map "Brightmaps/BeamZombie/BMZBAME2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAME3E7
+{
+Map "Brightmaps/BeamZombie/BMZBAME3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMF1
+{
+Map "Brightmaps/BeamZombie/BMZBAMF1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMF2F8
+{
+Map "Brightmaps/BeamZombie/BMZBAMF2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMF3F7
+{
+Map "Brightmaps/BeamZombie/BMZBAMF3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMF4F6
+{
+Map "Brightmaps/BeamZombie/BMZBAMF4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMF5
+{
+Map "Brightmaps/BeamZombie/BMBLACK"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMG1
+{
+Map "Brightmaps/BeamZombie/BMZBAMG1"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMG2G8
+{
+Map "Brightmaps/BeamZombie/BMZBAMG2"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMG3G7
+{
+Map "Brightmaps/BeamZombie/BMZBAMG3"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMG4G6
+{
+Map "Brightmaps/BeamZombie/BMZBAMG4"
+DisableFullBright
+}
+
+BrightMap Sprite ZBAMH0
+{
+Map "Brightmaps/BeamZombie/BMZBAMH0"
+DisableFullBright
+}

@@ -1,0 +1,166 @@
+ACTOR FlamerZombie 31497
+{
+
+    Health 50
+    Radius 20
+    Height 56
+    Speed 8
+    PainChance 100
+    MONSTER 
+    +FLOORCLIP
+    SeeSound "grunt/sight"
+    AttackSound "weapons/flamer"
+    PainSound "grunt/pain"
+    DeathSound "grunt/death"
+    ActiveSound "grunt/active"
+    Obituary "%o got fried by a flamer zombie."
+    MeleeRange 384
+    States
+    {
+    Spawn:
+        FLMZ AB 10 A_Look
+        Loop
+    See:
+        FLMZ A 4 A_Chase("", "")
+        FLMZ ABBCCDD 4 A_Chase
+        Loop
+    Melee:
+        FLMZ E 10 A_FaceTarget
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+        FLMZ E 10 A_FaceTarget
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+        FLMZ E 10 A_FaceTarget
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+        FLMZ E 10 A_FaceTarget
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+      	FLMZ F 1 A_CustomMissile("ZombieFire",32,0,random(-4,4),0)
+        Goto See
+    Pain:
+        FLMZ G 3
+        FLMZ G 3 A_Pain
+        Goto See
+    Death:
+        FLMZ H 5
+        FLMZ I 5 A_Scream
+        FLMZ J 5 A_Fall
+        FLMZ K 5
+        FLMZ L -1
+        Stop
+    XDeath:
+        FLMZ O 5
+        FLMZ P 5 A_XScream
+        FLMZ Q 5 A_Fall
+        FLMZ RSTU 5
+        FLMZ V -1
+        Stop
+    Raise:
+        FLMZ KJIH 5
+        Goto See
+    }
+}
+
+ACTOR ZombieFire
+{
+   Radius 2
+   Height 4
+   Speed 12		//16
+   Damage 1
+   PROJECTILE
+   RENDERSTYLE ADD
+   DamageType Fire
+   ALPHA 0.67
+   Scale 0.67
+   SeeSound "weapons/flamer"
+   DeathSound "weapons/scorch"
+   +THRUGHOST
+   States
+   {
+   Spawn:
+      NULL A 2 Bright
+      FRFX ABCD 2 Bright A_Explode(1,8,0)	//damage 5
+      FRFX D 0 Bright A_Lowgravity
+      FRFX EFG 2 Bright A_Explode(1,16,0)
+      FRFX HIJ 2 Bright A_Explode(1,32,0)
+      FRFX KLM 2 Bright A_Explode(1,64,0)
+      FRFX NO 2 Bright
+      stop
+   Death:
+      FRFX HIJ 2 Bright A_Explode(1,32,0)
+      FRFX J 0 A_CustomMissile ("ZombieDropFire",0,0,0,4)
+      FRFX KLM 2 Bright A_Explode(1,64,0)
+      FRFX NO 2 Bright
+      stop
+   }
+}
+
+ACTOR ZombieDropFire
+{
+   Radius 8
+   Height 40
+   PROJECTILE
+   RENDERSTYLE ADD
+   DamageType Fire
+   ALPHA 0.90
+   -NOGRAVITY
+   +LOWGRAVITY
+   +NOEXPLODEFLOOR
+   +NODAMAGETHRUST
+   +THRUGHOST
+   States
+   {
+   Spawn:
+      FLME A 1 Bright A_Playsound("weapons/onfire")
+      FLME A 1 Bright A_Explode(1,16,0)		//damage 5
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0)
+      FLME A 1 Bright A_Playsound("weapons/onfire")
+      FLME A 1 Bright A_Explode(1,32,0)
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0)
+      FLME A 1 Bright A_Playsound("weapons/onfire")
+      FLME A 1 Bright A_Explode(1,32,0)
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0)
+      FLME A 1 Bright A_Playsound("weapons/onfire")
+      FLME A 1 Bright A_Explode(1,32,0)
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0)
+      FLME A 1 Bright A_Playsound("weapons/onfire")
+      FLME A 1 Bright A_Explode(1,32,0)
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0)
+      FLME A 0 A_Jump(192,1)
+      loop
+      NULL A 0
+      goto death
+   Death:
+      NULL A 1 Bright
+      stop
+   }
+}

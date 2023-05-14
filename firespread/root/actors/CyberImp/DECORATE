@@ -1,0 +1,77 @@
+ACTOR cyberImp 15000
+{
+  Game Doom
+  SpawnID 5
+  Health 100
+  Radius 20
+  Height 56
+  Mass 200
+  Speed 8
+  PainChance 150
+  Monster
+  +FLOORCLIP
+  SeeSound "CIMPSIT"
+  PainSound "CIMPPAIN"
+  DeathSound "CIMPDTH"
+  ActiveSound "CIMPACT"
+  HitObituary "%o was torn apart by a cyber imp"
+  Obituary "%o was fried by a cyber imp"
+  States
+  {
+  Spawn:
+    CIMP AB 10 A_Look
+    Loop
+  See:
+    CIMP AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+    CIMP EF 8 A_FaceTarget
+    CIMP F 6 A_Custommeleeattack(3 * random(3, 10), "imp/melee") 
+    Goto See
+  Missile:
+    CIMP EF 8 A_FaceTarget
+    CIMP G 6 A_Custommissile("plasmaBall",36,4) 
+    Goto See
+  Pain:
+    CIMP H 2
+    CIMP H 2 A_Pain
+    Goto See
+  Death:
+    CIMP I 8
+    CIMP J 8 A_Scream
+    CIMP K 6
+    CIMP L 6 A_NoBlocking
+    CIMP M -1
+    Stop
+  XDeath:
+    CIMP N 5 A_CustomMissile("cyberArm",32,-10,270)
+    CIMP O 5 A_XScream
+    CIMP P 5
+    CIMP Q 5 A_NoBlocking
+    CIMP RST 5
+    CIMP U -1
+    Stop
+  Raise:
+    CIMP MLKJI 8
+    Goto See
+  }
+}
+
+ACTOR CyberArm
+{
+	Radius 8
+	Height 8
+	Speed 4
+	+DOOMBOUNCE
+	+DROPOFF
+	+Missile
+      States
+	{
+	Spawn:
+         CARM ABCDE 3
+         Loop
+	Death:
+	 CARM F -1
+	 Loop
+	}
+} 

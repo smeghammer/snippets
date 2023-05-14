@@ -1,0 +1,6 @@
+Code: Eriance, Ghastly Dragon (ZScript conversion)
+GLDefs: Ghastly Dragon, Sandypaper (Brightmaps)
+Sounds: Midway
+Sprites: Id Software, Eriance
+Sprite Edit: Eriance
+Base Idea: Doom 2 Chaingunner

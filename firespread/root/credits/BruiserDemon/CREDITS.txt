@@ -1,0 +1,5 @@
+Code: Vader, Ghastly Dragon (ZScript conversion)
+GLDefs: Ghastly Dragon, Keksdose, Sandypaper (Brightmaps)
+Sounds: Id Software, Blizzard
+Sprites: Id Software
+Sprite Edit: Vader

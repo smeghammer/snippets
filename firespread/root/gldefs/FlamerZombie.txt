@@ -1,0 +1,28 @@
+FlickerLight2 FlameThrowerFire
+{
+ Offset 0 2 0
+ Color 0.15 0.04 0.0
+ Size 40
+ SecondarySize 60
+ Interval 2.0
+ 
+}
+
+FlickerLight2 Flame
+{
+ Offset 0 0 0
+ Color 0.15 0.04 0.0
+ Size 20
+ SecondarySize 30
+ Interval 2.0
+}
+
+Object ZombieFire
+{
+ Frame FRFX { Light FlameThrowerFire }
+}
+
+Object ZombieDropFire
+{
+ Frame FLME { Light Flame }
+}

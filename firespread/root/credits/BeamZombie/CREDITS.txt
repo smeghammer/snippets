@@ -1,0 +1,5 @@
+Code: Captain Toenail, Ghastly Dragon (ZScript conversion)
+GLDefs: Sandypaper (Brightmaps)
+Sounds: UT2K4, Quake2
+Sprites: Id Software
+Sprite Edit: Captain Toenail, Ghastly Dragon

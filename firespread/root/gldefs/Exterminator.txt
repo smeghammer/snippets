@@ -1,0 +1,4 @@
+object Exterminator
+{
+    frame EXTRF { light ZOMBIEATK }
+}

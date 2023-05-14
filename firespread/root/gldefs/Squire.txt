@@ -1,0 +1,47 @@
+Object SquireShot
+{
+Frame HHFXA { Light SquireLight }
+Frame HHFXB { Light SquireLight }
+Frame HHFXC { Light SquireLight }
+Frame HHFXD { Light SquireBoom1 }
+Frame HHFXE { Light SquireBoom2 }
+Frame HHFXF { Light SquireBoom3 }
+Frame HHFXG { Light SquireBoom4 }
+Frame HHFXH { Light SquireBoom5 }
+}
+
+Pointlight SquireLight
+{
+Color 0.8 0.4 0.2
+Size 32
+}
+
+Pointlight SquireBoom1
+{
+Color 0.9 0.45 0.25
+Size 40
+}
+
+Pointlight SquireBoom2
+{
+Color 1.0 0.5 0.3
+Size 48
+}
+
+Pointlight SquireBoom3
+{
+Color 0.8 0.4 0.2
+Size 40
+}
+
+Pointlight SquireBoom4
+{
+Color 0.5 0.2 0.0
+Size 24
+}
+
+Pointlight SquireBoom5
+{
+Color 0.3 0.15 0.0
+Size 16
+}

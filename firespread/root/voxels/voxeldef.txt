@@ -1,0 +1,331 @@
+treda =  "tallred1"
+{
+	Scale = 0.9
+}
+
+tredb =  "tallred2"
+{
+	Scale = 0.9
+}
+
+tredc =  "tallred3"
+{
+	Scale = 0.9
+}
+
+tredd =  "tallred4"
+{
+	Scale = 0.9
+}
+
+tblua =  "tallblu1"
+{
+	Scale = 0.9
+}
+
+tblub =  "tallblu2"
+{
+	Scale = 0.9
+}
+
+tbluc =  "tallblu3"
+{
+	Scale = 0.9
+}
+
+tblud =  "tallblu4"
+{
+	Scale = 0.9
+}
+
+tgrna =  "tallgrn1"
+{
+	Scale = 0.9
+}
+
+tgrnb =  "tallgrn2"
+{
+	Scale = 0.9
+}
+
+tgrnc =  "tallgrn3"
+{
+	Scale = 0.9
+}
+
+tgrnd =  "tallgrn4"
+{
+	Scale = 0.9
+}
+
+cbraa =  "candlbra"
+{
+	AngleOffset = 90
+}
+
+mguna =  "machgun"
+{
+	Scale = 0.9
+	droppedspin = 25
+}
+
+ammoa = "ammoa"
+{
+	droppedspin = 25
+}
+
+bkeya = "bkeya"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+bkeyb = "bkeyb"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+rkeya = "rkeya"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+rkeyb = "rkeyb"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+ykeya = "ykeya"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+ykeyb = "ykeyb"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+broka = "broka"
+{
+	droppedspin = 25
+}
+
+cella = "cella"
+{
+	droppedspin = 25
+}
+
+celpa = "celpa"
+{
+	droppedspin = 25
+}
+
+clipa = "clipa"
+{
+	droppedspin = 25
+}
+
+launa = "launa"
+{
+	droppedspin = 25
+}
+
+media = "media"
+{
+	droppedspin = 25
+}
+
+plasa = "plasa"
+{
+	droppedspin = 25
+}
+
+rocka = "rocka"
+{
+
+}
+
+sboxa = "sboxa"
+{
+	droppedspin = 25
+}
+
+sgn2a = "sgn2a"
+{
+	droppedspin = 25
+}
+
+shela = "shela"
+{
+	droppedspin = 25
+}
+
+shota = "shota"
+{
+	droppedspin = 25
+}
+
+stima = "stima"
+{
+	droppedspin = 25
+}
+
+pmapa = "pmapa"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+pmapb = "pmapb"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+pmapc = "pmapc"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+pmapd = "pmapd"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+arm1a = "arm1a"
+{
+	droppedspin = 25
+	AngleOffset = 270
+}
+
+arm1b = "arm1b"
+{
+	droppedspin = 25
+	AngleOffset = 270
+}
+
+arm2a = "arm2a"
+{
+	droppedspin = 25
+	AngleOffset = 270
+}
+
+arm2b = "arm2b"
+{
+	droppedspin = 25
+	AngleOffset = 270
+}
+
+pstra = "pstra"
+{
+	droppedspin = 25
+}
+
+suita = "suita"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+bpaka = "bpaka"
+{
+	droppedspin = 25
+	placedspin = 25
+}
+
+hdb6a = "hdb6a"
+{
+	AngleOffset = 270
+}
+
+pol4a = "pol4a"
+{
+	AngleOffset = 270
+}
+
+bon1a = "bon1a"
+{
+	droppedspin = 25
+}
+
+bon1b = "bon1b"
+{
+	droppedspin = 25
+}
+
+bon1c = "bon1c"
+{
+	droppedspin = 25
+}
+
+bon1d = "bon1d"
+{
+	droppedspin = 25
+}
+
+pvisa = "pvisa"
+{
+	droppedspin = 25
+}
+
+pvisb = "pvisb"
+{
+	droppedspin = 25
+}
+
+sw01a = "sw01a"
+{
+	AngleOffset = 270
+}
+
+sw01b = "sw01b"
+{
+	AngleOffset = 270
+}
+
+sw02a = "sw02a"
+{
+	AngleOffset = 270
+}
+
+sw02b = "sw02b"
+{
+	AngleOffset = 270
+}
+
+sw03a = "sw03a"
+{
+	AngleOffset = 270
+}
+
+sw03b = "sw03b"
+{
+	AngleOffset = 270
+}
+
+sw04a = "sw04a"
+{
+	AngleOffset = 270
+}
+
+sw04b = "sw04b"
+{
+	AngleOffset = 270
+}
+
+sw05a = "sw05a"
+{
+	AngleOffset = 270
+}
+
+sw05b = "sw05b"
+{
+	AngleOffset = 270
+}

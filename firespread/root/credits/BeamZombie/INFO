@@ -1,0 +1,16 @@
+Name: PlasmaBeam Zombie
+Difficulty: Medium
+Connection: None
+Summon: BeamGuy
+Melee: No
+Distance: Projectile
+Type: Human, Undead
+Brightmaps: Yes
+Actor modification: No
+ACS: No
+
+
+A zombie with a Plasma Beam. Hard to avoid in open areas and does a lot of damage if sustained.
+Kill it quickly or take cover to avoid being forced down.
+
+A quick note, its attack doesn't display properly in Skulltag. Best used in (G)ZDoom.

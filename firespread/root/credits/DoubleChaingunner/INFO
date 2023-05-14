@@ -1,0 +1,14 @@
+Name: Double Chaingunner
+Difficulty: Medium
+Connection: None
+Summon: ChaingunGuy2
+Melee: No
+Distance: Hitscan
+Type: Human, Undead
+Brightmaps: Yes
+Actor modification: No
+ACS: No
+
+
+Quite obviously, a Chaingun Zombie with two chainguns. Hits twice as hard as the standard zombie
+and can shred the player very quickly.

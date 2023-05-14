@@ -1,0 +1,104 @@
+actor Squire : BaronOfHell 9403
+{
+  spawnid 113
+  scale 0.9
+  obituary "%o was scorched by a Squire."
+  hitobituary "%o was torn up by a Squire."
+  health 225
+  gibhealth 50
+  -BOSSDEATH
+  radius 20
+  height 56
+  mass 200
+  speed 8
+  painchance 120
+  BloodColor "00 66 00"
+  seesound "squire/sight"
+  painsound "knight/pain"
+  deathsound "squire/death"
+  activesound "knight/active"
+  MONSTER
+  +FLOORCLIP
+  +DONTHURTSPECIES
+  states
+  {
+  Spawn:
+    BOS6 AB 10 A_Look
+    loop
+  See:
+       BOS6 AABBCCDD 4 A_Chase
+    loop
+  Melee:
+      BOS6 EF 8 A_FaceTarget
+    BOS6 G 8 A_CustomMeleeAttack(6, "baron/melee")
+    goto See
+  Missile:
+    BOS6 EF 8 A_FaceTarget
+    BOS6 G 8 A_CustomMissile("SquireShot")
+    goto See
+  Pain:
+    BOS6 H 2
+    BOS6 H 2 A_Pain
+    goto See
+  Death:
+    BOS6 I 8
+    BOS6 J 8 A_Scream
+    BOS6 K 8
+    BOS6 L 8 A_NoBlocking
+    BOS6 MN 8
+    BOS6 O -1
+    stop
+    XDeath:
+    BOS6 P 8
+    BOS6 Q 8 A_XScream
+    BOS6 R 8
+    BOS6 S 8 A_NoBlocking
+    BOS6 TU 8
+    BOS6 V -1
+    stop
+  Raise:
+    BOS6 ONMLKJI 8
+    goto See
+  }
+}
+
+ACTOR SquireShot
+{
+  Speed 15
+  Radius 10
+  Height 6
+  Damage 5
+  Projectile
+  +SPAWNSOUNDSOURCE
+  RenderStyle Add
+  SeeSound "fireball/fire"
+  DeathSound "fireball/hit"
+  Alpha 0.85
+
+  States
+  {
+  Spawn:
+    HHFX ABC 3 Bright A_SpawnItemEx("SmokeTrail", 0, -8, 0)
+    Loop
+  Death:
+    HHFX DE 4 Bright
+    HHFX FGH 3 Bright
+    Stop
+  }
+}
+
+actor SmokeTrail
+{
+PROJECTILE
+RENDERSTYLE TRANSLUCENT
++NOCLIP
+ALPHA 0.3
+Scale 0.5
+States
+{
+Spawn:
+SMK1 J 3
+SMK1 ABCDEFGHI 2 Bright
+Stop
+}
+}

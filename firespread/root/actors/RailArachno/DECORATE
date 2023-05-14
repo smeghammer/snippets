@@ -1,0 +1,53 @@
+ACTOR RailArachnotron 3125
+{
+	//$Category "ZDoom Monster pack"
+	Health 750
+	Radius 60
+	Height 64
+	Mass 600
+	Speed 12
+	PainChance 192
+	Monster
+	+FLOORCLIP
+	+NOINFIGHTING
+	SeeSound "baby/sight"
+	PainSound "baby/pain"
+	DeathSound "baby/death"
+	ActiveSound "baby/active"
+	Obituary "%o was railed by an arachnotron."
+	Decal RedRailScorch
+	States
+	{
+	Spawn:
+		RSPI AB 10 A_Look
+		Loop
+	See:
+		RSPI A 20
+		RSPI A 3 A_BabyMetal
+		RSPI ABBCC 3 A_Chase
+		RSPI D 3 A_BabyMetal
+		RSPI DEEFF 3 A_Chase
+		Goto See+1
+	Missile:
+		RSPI A 0 A_PlaySound ("baby/chargerailgun")
+		RSPI A 16 A_FaceTarget
+		RSPI G 16 A_FaceTarget
+		RSPI H 4 A_CustomRailgun (30, 0, AA0000, FF0000, 0, 1)
+		RSPI G 8
+		Goto See+1
+	Pain:
+		RSPI I 3
+		RSPI I 3 A_Pain
+		Goto See+1
+	Death:
+		RSPI J 20 A_Scream
+		RSPI K 7 A_Fall
+		RSPI LMNO 7
+		RSPI P -1
+		Stop
+    Raise:
+		RSPI P 5
+		RSPI ONMLKJ 5
+		Goto See+1
+	}
+}

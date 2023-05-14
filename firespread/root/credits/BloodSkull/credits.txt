@@ -1,0 +1,6 @@
+Submitted: Gothic
+Decorate: Gothic
+GLDefs: Gothic
+Sounds: 3DRealms, Rogue Entertainment
+Sprites: 3DRealms, Id Software, Monolith Productions
+Sprite Edit: Gothic

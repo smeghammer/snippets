@@ -1,0 +1,105 @@
+FlickerLight2 DoubleChaingunGuy
+{
+color 1.0 0.8 0.2
+size 48
+secondarySize 56
+interval 1
+offset 0 40 0
+}
+
+Object ChaingunGuy2
+{
+Frame DPOSE { Light DoubleChaingunGuy }
+Frame DPOSF { Light DoubleChaingunGuy }
+}
+
+
+BrightMap Sprite DPOSE1
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE1.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE2
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE2.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE3
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE3.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE4
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE4.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE6
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE6.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE7
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE7.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSE8
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSE8.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF1
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF1.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF2
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF2.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF3
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF3.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF4
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF4.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF5
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF5.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF6
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF6.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF7
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF7.png"
+    DisableFullBright
+}
+
+BrightMap Sprite DPOSF8
+{
+    Map "Brightmaps/DoubleChaingunner/BMDPOSF8.png"
+    DisableFullBright
+}

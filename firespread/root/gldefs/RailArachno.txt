@@ -1,0 +1,11 @@
+Pointlight RailArachnotronAttack
+{
+Color 1.0 0.0 0.0
+Size 55
+}
+
+Object RailArachnotron
+{
+Frame RSPIH { Light RailArachnotronAttack }
+}
+
