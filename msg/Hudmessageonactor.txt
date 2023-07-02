@@ -1,0 +1,163 @@
+int dist, x, y, printx, printy; // These varibles are outside of the function so you can modify / use them in other scripts
+int minx = 9.9; // Used for Clipping
+int miny = 9.9; // Used for Clipping
+int maxx = 630.1; // Used for Clipping
+int maxy = 395.1; // Used for Clipping
+
+function void hudmessageonactor(int tid, int range, bool ignoreall, str sprite, str text, str font, int id, str color, bool horiz, bool verti, bool invert, bool clip)
+{
+	int ang, vang, pitch;
+	int HUDX = 640;
+	int HUDY = 400;
+	int offset = 0;
+
+	if(sprite != -1)
+	{
+		setfont(sprite);
+		text = "A";
+		offset = 0.1;
+	}
+
+	sethudsize(HUDX, HUDY, 1);
+	x = getactorx(tid) - getactorx(0);
+	y = getactory(tid) - getactory(0); 
+
+	vang = vectorangle(x,y);
+	ang = (vang - GetActorAngle(0) + 1.0) % 1.0;
+
+	if(((vang+0.125)%0.5) > 0.25) dist = fixeddiv(y, sin(vang));
+	else dist = fixeddiv(x, cos(vang));
+
+	if ((ang < 0.2 || ang > 0.8) && dist / 65536 < range)
+	{
+    {
+		pitch = vectorangle(dist, getactorz(tid) - (getactorz(0)));
+		pitch = (pitch + GetActorPitch(0) + 1.0) % 1.0;
+    
+    if(getactorpitch(0) >= -16200 && getactorpitch(0) <= 16200) //Preventing division by zero
+    {
+    if(invert == 0)
+    {
+		y = HUDY/2 - ((HUDX/2) * sin(pitch) / cos(pitch));
+		x = HUDX/2 - ((HUDX/2) * sin(ang) / cos(ang));
+    }
+    else
+    if(invert == 1)
+    {
+		y = HUDY/2 + ((HUDX/2) * sin(pitch) / cos(pitch));
+		x = HUDX/2 + ((HUDX/2) * sin(ang) / cos(ang));
+    }
+    }
+    else
+    {
+        x = 700;
+        y = 600;
+    }
+    
+   if( horiz == 1)
+   {
+   printx = (x<<16)+offset;
+   }
+   else printx = (320<<16)+offset;
+   if( verti == 1)
+   {
+   printy = (y<<16)+offset;
+   }
+   else printy = (200<<16)+offset;
+   }
+   
+   if(clip == 1)
+   {
+        if(printx <= minx)
+        {
+            printx = minx + 0.1;
+        }
+        if(printy <= miny)
+        {  
+            printy = miny + 0.1;
+        }
+        if(printx >= maxx)
+        {
+            printx = maxx - 0.1;
+        }
+        if(printy >= maxy)
+        {
+            printy = maxy - 0.1;
+        }
+    }
+   Setfont(font);
+		hudmessage(s:text; HUDMSG_PLAIN, id, color, printx, printy, 0);
+}
+  else
+  if(ignoreall == 1)
+	{
+    {
+		pitch = vectorangle(dist, getactorz(tid) - (getactorz(0)));
+		pitch = (pitch + GetActorPitch(0) + 1.0) % 1.0;
+
+    if(getactorpitch(0) >= -16200 && getactorpitch(0) <= 16200) //Preventing division by zero
+    {
+    if(invert == 0)
+    {
+		y = HUDY/2 - ((HUDX/2) * sin(pitch) / cos(pitch));
+		x = HUDX/2 - ((HUDX/2) * sin(ang) / cos(ang));
+    }
+    else
+    if(invert == 1)
+    {
+		y = HUDY/2 + ((HUDX/2) * sin(pitch) / cos(pitch));
+		x = HUDX/2 + ((HUDX/2) * sin(ang) / cos(ang));
+    }
+    }
+    else
+    {
+        x = 700;
+        y = 600;
+    }
+    
+   if( horiz == 1)
+   {
+   printx = (x<<16)+offset;
+   }
+   else printx = (320<<16)+offset;
+   if( verti == 1)
+   {
+   printy = (y<<16)+offset;
+   }
+   else printy = (200<<16)+offset;
+   }
+   
+   if(clip == 1)
+   {
+        if(printx <= minx)
+        {
+            printx = minx + 0.1;
+        }
+        if(printy <= miny)
+        {  
+            printy = miny + 0.1;
+        }
+        if(printx >= maxx)
+        {
+            printx = maxx - 0.1;
+        }
+        if(printy >= maxy)
+        {
+            printy = maxy - 0.1;
+        }
+    }
+    
+   Setfont(font);
+		hudmessage(s:text; HUDMSG_PLAIN, id, color, printx, printy, 0);
+	}
+	else
+		hudmessage(s:" "; HUDMSG_PLAIN, id, color, 0, 0, 0);
+}
+
+Function void SetHudMessageLimits(int minx1, int miny1, int maxx1, int maxy1)
+{
+    minx = minx1;
+    miny = miny1;
+    maxx = maxx1;
+    maxy = maxy1;
+}
