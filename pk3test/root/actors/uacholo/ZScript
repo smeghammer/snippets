@@ -1,0 +1,170 @@
+Class UACHologramCustom : Actor
+{
+	Default
+	{
+		//$Title UAC Hologram
+		//$Category Decorations
+		//$Sprite "UAC0A0"
+		//$IsDecoration
+		Scale 0.5;
+		RenderStyle "Add";
+		+NoGravity;
+	}
+	Bool User_2DSprite; //Whether the hologram is totally 2D, and doesn't always look at you, false by default.
+	Bool User_ModernLogo; //If true, changes the UAC logo to the modern one, false by default.
+	Bool User_NoParticles; //Whether or not the hologram should not produce particles.
+	Bool User_NoLight; //If true, the hologram won't spawn a dynamic light.
+	Double User_SpinSpeed; //How fast the hologram rotates every tick, 0 by default, User_2DSprite needs to be on for this to work.
+	String User_Color; //The color of the hologram, can be Green, Blue, or Red. Green by default.
+	Double RandOfsX;
+	Double RandOfsY;
+	//Don't mess with these variables.
+	Private Bool LightSpawned;
+	Private Actor Light; //A pointer to the dynamic light.
+	Override Void PostBeginPlay()
+	{
+		Super.PostBeginPlay();
+		Self.Pitch = 270; //So the hologram stands up if it is a flat sprite.
+		If (User_2DSprite) {bFlatSprite = True;}
+		If (!User_Color || User_Color ~== " ") {User_Color = "Green";} //If no color is specified, it defaults to green.
+	}
+	Override Void Tick()
+	{
+		Super.Tick();
+		If (IsFrozen()) {Return;} //Do nothing if frozen.
+		A_SetAngle (Angle+User_SpinSpeed,SPF_INTERPOLATE);
+		//Dynamic light handling code
+		If (!User_NoLight && !LightSpawned)
+		{
+			Light = Spawn ("HologramDynamicLight",Self.Pos);
+			Light.Master = Self; //Make the hologram the lights' master.
+			LightSpawned = True;
+		}
+		Else If (User_NoLight && Light) {Light.Destroy(); LightSpawned = False;}
+		
+		//Particle spawning code
+		//=================
+		If (User_NoParticles == True) {Return;} //Don't spawn particles if this boolean is on.
+		Bool Spawned; //If the particle spawned successfully, has to be here to access A_SpawnItemEx's pointer to the spawned actor.
+		Actor Particle;
+		RandOfsX = FRandom (-24.0,24.0);
+		RandOfsY = FRandom (-24.0,24.0);
+		[Spawned,Particle] = A_SpawnItemEx ("UACHologramParticle",RandOfsX,RandOfsY,4,flags:SXF_NOCHECKPOSITION);
+		Particle.A_ChangeVelocity (z:FRandom (2,6),CVF_RELATIVE); //Give the particle a random amount of upward speed.
+		If (User_Color ~== "Green") {Particle.SetStateLabel ("Green",False);} //So you don't have to place down the hologram again if you set it to a custom color before.
+		If (User_Color ~== "Blue") {Particle.SetStateLabel ("Blue",False);} //If the hologram is blue, then make the particles it spawns blue as well.
+		If (User_Color ~== "Red") {Particle.SetStateLabel ("Red",False);} //Ditto, but red.
+		//=================
+	}
+	Override Void OnDestroy()
+	{
+		If (Light) {Light.Destroy();} //Remove the light too.
+		Super.OnDestroy();
+	}
+	States
+	{
+		Spawn:
+			UAC1 B 1 Bright
+			{
+				If (User_ModernLogo == True)
+				{
+					Frame = 0; //Frame A, AKA the sprite frame with the modern UAC logo.
+				}
+				If (User_Color ~== "Green") {Sprite = GetSpriteIndex ("UAC1");}
+				If (User_Color ~== "Blue") {Sprite = GetSpriteIndex ("UAC2");} //If User_Color is blue, then use the blue version of the hologram.
+				If (User_Color ~== "Red") {Sprite = GetSpriteIndex ("UAC3");} //Ditto, but red.
+			}
+			Loop;
+	}
+}
+
+//$GZDB_SKIP
+
+Class UACHologramParticle : Actor
+{
+	Default
+	{
+		+NoInteraction;
+		+NoBlockmap;
+		RenderStyle "Add";
+	}
+	Override Void Tick()
+	{
+		Super.Tick();
+		If (IsFrozen()) {Return;} //Do nothing if frozen.
+		Self.Scale.Y = Self.Scale.Y - 0.05;
+		A_FadeOut(0.075);
+		If (Scale.Y <= 0.0) {Destroy();} //The particles vanishes once it shrinks to nothing, instead of inverting.
+	}
+	Int MayVanish; //A randomized value to determine if the particle should spawn, the hologram spawns too many otherwise.
+	Override Void PostBeginPlay()
+	{
+		Super.PostBeginPlay();
+		MayVanish = Random (0,8);
+		If (MayVanish >= 6) {Destroy();}
+	}
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			Goto Green; //Default state for the particle to go to, since the hologram itself is green by default.
+		Green:
+			PLEM A 35 Bright A_SetTics (Random (8,16));
+			Stop;
+		Blue:
+			PLEM B 35 Bright A_SetTics (Random (8,16));
+			Stop;
+		Red:
+			PLEM C 35 Bright A_SetTics (Random (8,16));
+			Stop;
+	}
+}
+
+Class HologramDynamicLight : PointLightPulse
+{
+	Override Void PostBeginPlay()
+	{
+		Super.PostBeginPlay();
+		bAttenuate = True;
+		args[Light_Intensity] = 48;
+		args[Light_Secondary_Intensity] = 52;
+		Activate(Self); //Let there be light.
+	}
+	Override Void Tick()
+	{
+		Super.Tick();
+		
+		If (IsFrozen()) {Return;} //Don't run the color checking and moving code if frozen.
+		
+		If (Master){Warp (Master,zofs:24,flags:WARPF_INTERPOLATE |WARPF_NOCHECKPOSITION);}
+		
+		If (Master && Master Is "UACHologramCustom") //Check if the master exists and is a hologram.
+		{
+			//Change the color based on the value of the User_Color variable on the hologram.
+			If (UACHologramCustom(Master).User_Color ~== "Red")
+			{args[LIGHT_RED] = 188; args[LIGHT_GREEN] = 86; args[LIGHT_BLUE] = 22;}
+			If (UACHologramCustom(Master).User_Color ~== "Green")
+			{args[LIGHT_RED] = 53; args[LIGHT_GREEN] = 188; args[LIGHT_BLUE] = 22;}
+			If (UACHologramCustom(Master).User_Color ~== "Blue")
+			{args[LIGHT_RED] = 22; args[LIGHT_GREEN] = 163; args[LIGHT_BLUE] = 188;}
+		}
+	}
+}
+
+Class UACHologramSprites : Actor
+{
+	Default{+NoInteraction; +NoBlockmap;}
+	States
+	{
+		Spawn:
+			TNT1 A 1 NoDelay
+			{
+				A_Log ("This actor only exists to load the sprites used by GetSpriteIndex() to memory, otherwise the game crashes.");
+			}
+			UAC1 "#" 0;
+			UAC2 "#" 0;
+			UAC3 "#" 0;
+			PLEM "#" 0;
+			Stop;
+	}
+}
