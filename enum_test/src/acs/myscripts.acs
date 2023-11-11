@@ -1,0 +1,117 @@
+#library "myscripts.acs"
+#include "zcommon.acs"
+
+int x=1;
+/* 
+tests for simulating an ENUM:
+ - fixed three options here (so I can also test with the door switches):
+Note that arrays are zero-indexed, so look carefully at how this, and the 
+below, array are referenced in the test code below, in script 100. It is 
+nice that as this is an integer array, attempting to get ANY OOB or unknown 
+index will return zero, making for a nice built-in exception handling. 
+ */
+int actions[3]={
+	1,
+	2,
+	3,
+// 	4,
+// 	5
+};
+
+/*
+ - corresponding action descriptions
+Note that the first element acts as a catchall if the index passed to actions[] does not exist. In that
+case, the return value is ZERO - making a nice handled exception, that IO can map to the zero'th element
+of the array below:
+*/
+str action_names[4]={
+	"Zero is NO ACTION DEFINED",
+	"Action 1",
+	"Action 2",
+	"Action 3"
+};
+
+/* test the fake enum: */
+script 100 ENTER{
+	// note: zero-indexed
+	log(i:actions[0], s:action_names[actions[0]]); // action 1
+	log(i:actions[1], s:action_names[actions[1]]); // action 2
+	log(i:actions[2], s:action_names[actions[2]]); // action 3
+	
+	//OOB/bad index tests:
+	// also undefined, to test with the current map
+	log(i:actions[3], s:action_names[actions[3]]);
+	log(i:actions[4], s:action_names[actions[4]]);
+	log(i:actions[5], s:action_names[actions[5]]);
+	log(i:actions[88], s:action_names[actions[88]]);
+	log(i:actions["v"], s:action_names[actions["v"]]);
+}
+
+str combo = "4112";
+str key = "";
+
+/* handle the 'enum' as a fixed list in a switch/case block. Here, 
+I am building a door combination lock function (which just makes a string)
+to show how a function might handle a variable input, and the switch/case here
+doesn't do much, just shows how it chooses a case based on the input: */
+script 1 ( int flag ) {
+	log(s:"passing ",s:flag);
+	
+	/* calling function with argument */
+	unlock_door(flag);
+	
+	/* and here is a switch/case test */
+	switch(flag){
+		case 1:
+			print(s:"called option 1...");
+			break;
+		case 2:
+			print(s:"called option 2...");
+			break;
+		case 3:
+			print(s:"called option 3..");
+			break;
+		case 4:
+			print(s:"called option 4...");
+			break;
+		default:
+			print(s:"WTF are you trying to do??");
+	}
+}
+
+/* called from the wall switch: */
+script 2 (void){
+	reset_key();
+}
+
+/* reset the key to zero-length string: */
+function bool reset_key(void){
+	print(s:"Resetting key");
+	key = "";
+	x=0;
+	return(true);
+}
+
+// name returntype:val(type:arg1,...){}
+/* 
+concatenate the ints to a string for comparison to 'combo' defined at the top.
+if match, open door and reset key and counter, otherwise, just keep concatenating...
+Clearly, if you were to do this for real, you would not log the variables...
+ */
+function bool unlock_door(str flag){
+	log(s:"flag");
+	// concatenate to build key:
+	key = StrParam(s:key ,i:flag);
+	log(s:"KEY IS: ",s:key,s:", COMBO IS: ",s:combo);
+	
+	if(StrCmp(key,combo) == 0){	//do they match?
+		log(s:"Opening door...");
+		Ceiling_RaiseByValue(1,12,64);
+		//reset:
+		key = "";
+		x=0;
+	}
+	x=x+1;
+	return(true);
+}
+
